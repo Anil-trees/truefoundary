@@ -1,2 +1,2 @@
 # getting-started-examples
-Examples to get started with using TrueFoundry 11
+Examples to get started with using TrueFoundry
