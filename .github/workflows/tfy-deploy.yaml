@@ -7,7 +7,7 @@ on:
 
 env:
   TFY_HOST: https://tf-demo.truefoundry.cloud
-  TFY_APPLICATION_FQN: tf-demo-new:tf-demo:deployment-tf
+  TFY_APPLICATION_FQN: tf-demo-new:tf-demo:deployment-cicd
   TFY_API_KEY: ${{ secrets.TFY_API_KEY }}
 
 jobs:
@@ -19,4 +19,4 @@ jobs:
         run: pip install servicefoundry
       - name: Deploy with patch
         run: |
-          sfy patch-application --application_fqn=tf-demo-new:tf-demo:deployment-tf --patch='{"image": {"build_source": {"ref": "${{ github.sha }}"}}}'
+          sfy patch-application --application_fqn=tf-demo-new:tf-demo:deployment-cicd --patch='{"image": {"build_source": {"ref": "${{ github.sha }}"}}}'
