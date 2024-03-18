@@ -6,8 +6,8 @@ on:
       - main
 
 env:
-  TFY_HOST: https://rsndontree.truefoundry.cloud
-  TFY_APPLICATION_FQN: test-cluster2102:rt-ws:test
+  TFY_HOST: https://tf-demo.truefoundry.cloud
+  TFY_APPLICATION_FQN: tf-demo-new:tf-demo:deployment-tf
   TFY_API_KEY: ${{ secrets.TFY_API_KEY }}
 
 jobs:
@@ -19,4 +19,4 @@ jobs:
         run: pip install servicefoundry
       - name: Deploy with patch
         run: |
-          sfy patch-application --application_fqn=test-cluster2102:rt-ws:test --patch='{"image": {"build_source": {"ref": "${{ github.sha }}"}}}'
+          sfy patch-application --application_fqn=tf-demo-new:tf-demo:deployment-tf --patch='{"image": {"build_source": {"ref": "${{ github.sha }}"}}}'
