@@ -1,5 +1,5 @@
 FROM python:3.9
-COPY ./requirements.txt /tmp/
+COPY ./docker-deploy/requirements.txt /tmp/
 RUN pip install -U pip && pip install -r /tmp/requirements.txt
 COPY . ./app
 WORKDIR app
