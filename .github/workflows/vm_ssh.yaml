@@ -17,7 +17,7 @@ jobs:
       run: |
         echo "${SSH_PRIVATE_KEY}" > private_key
         chmod 600 private_key
-        ssh -o StrictHostKeyChecking=no -i private_key ec2-user@<your-ec2-instance-ip> << EOF
+        ssh -o StrictHostKeyChecking=no -i private_key ec2-user@3.91.207.90 << 'EOF'
           ls
           pwd
         EOF
